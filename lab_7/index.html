@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="styles.css">
+        <title>Web-page</title>
+	</head>
+
+    <header>
+        <div class="items"><i class="fa fa-book" aria-hidden="true"></i> Flora~Field</div>
+        <div class="items dropdown" ><i class="fa fa-shopping-cart"><span class="badge">0</span></i>
+            <div class="dropdown-content">
+                <div class="shopping-cart-header">
+                    <div class="shopping-cart-total">
+                      <span class="lighter-text">Total:</span>
+                      <span class="main-color-text">$0</span>
+                      <br>
+                      <button onclick="toCart(event)">To cart</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </header>
+    
+
+    <body>
+        <div id="btnContainer">
+            <button class="btn" onclick="listView()">
+                <i class="fa fa-bars"></i> List
+            </button>
+            <button class="btn active" onclick="gridView()">
+                <i class="fa fa-th-large"></i> Grid
+            </button>
+            <button class="btn" onclick="sortByPrice()">
+                <i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Sort
+            </button>
+            <button class="btn" onclick="sortByAvailibility()">
+                <i class="fa fa-circle-o" aria-hidden="true"></i> Availiable only
+            </button>
+        </div>
+
+        <br>
+
+        <div class="demo"> 
+            <div class="row">
+                <div class="column" value=false price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>1Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=true price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle" aria-hidden="true"></i></div>
+                    <span class="add_to_Cart" onclick="addTocart(event)"><i class="fa fa-cart-plus" aria-hidden="true"></i></span>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>2Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=false price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>3Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=true price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle" aria-hidden="true"></i></div>
+                    <div class="add_to_Cart" onclick="addTocart(event)"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>4Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+    
+            </div>
+            <div class="row">
+                <div class="column" value=false price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>5Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=true price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle" aria-hidden="true"></i></div>
+                    <div class="add_to_Cart" onclick="addTocart(event)"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>6Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=false price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>7Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=true price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle" aria-hidden="true"></i></div>
+                    <div class="add_to_Cart" onclick="addTocart(event)"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>8Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+    
+            </div>
+            <div class="row">
+                <div class="column" value=false price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>9Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=true price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle" aria-hidden="true"></i></div>
+                    <div class="add_to_Cart" onclick="addTocart(event)"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>10Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=false price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>11Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=true price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle" aria-hidden="true"></i></div>
+                    <div class="add_to_Cart" onclick="addTocart(event)"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>12Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+    
+            </div>
+            <div class="row">
+                <div class="column" value=true price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle" aria-hidden="true"></i></div>
+                    <div class="add_to_Cart" onclick="addTocart(event)"><i class="fa fa-cart-plus" aria-hidden="true"></i></div>
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>9Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=false price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>10Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=false price=28>
+                    <img class="img_list" src="pics/2.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Aloe Vera, In Mini Dolores Planter, 28$</div>
+                    <div class="title">
+                        <h2>11Aloe Vera</h2>
+                        <div>28$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Mini Dolores Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+                <div class="column" value=false price=50>
+                    <img class="img_list" src="pics/1.jpg" alt="">
+                    <div class="hover_item">Available: <i class="fa fa-circle-o" aria-hidden="true"></i></div>
+                    <div class="desc">Air Plant Trio, In Tillandz Stand Planter, 50$</div>
+                    <div class="title">
+                        <h2>12Air Plant Trio</h2>
+                        <div>50$</div>
+                    </div>
+                    <div class="additional">
+                        <p>In Tillandz Stand Planter</p>
+                        <i>Mini</i> 
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
+        
+
+        <div class="paginator" onclick="pagination(event)"></div>
+
+        <script src="script.js"></script>
+    </body>
+
+    <footer>
+        
+        <div class="socials">Contact as: </div>
+        <div class="socials"><a href="https://bitbucket.org/DarkMinimum/" target="blank"><i class="fa fa-bitbucket" aria-hidden="true"></i></a></div> 
+        <div class="socials"><a href="https://vk.com/darkminimum" target="blank"><i class="fa fa-vk" aria-hidden="true"></i></a></div> 
+        <div class="socials"><a href="https://github.com/DarkMinimum" target="blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+        <div class="socials"></div><a href="https://steamcommunity.com/profiles/76561198099365101/" target="blank"><i class="fa fa-steam" aria-hidden="true"></i></a></div>
+        <div class="socials"></div><a href="https://www.instagram.com/dork.munimum" target="blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+        <div class="socials"></div><a href="https://www.linkedin.com/in/danylo-hrechyshkin-3ab78b20b/" target="blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></div>
+
+    </footer>
+
+
+</html>
